@@ -1,6 +1,26 @@
+let data_dir = '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'cohama/lexima.vim'
+call plug#end()
+
+set hlsearch ignorecase incsearch
+set tabstop=4 softtabstop=4
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <Esc> :nohlsearch<CR><Esc>
+
+
 set t_Co=256
-colo torte
-set laststatus=1
+" colo torte
+" set laststatus=1
+set laststatus=2
 set showcmd
 set expandtab
 syntax enable
@@ -11,13 +31,13 @@ set nu
 " 取消自動換行
 set nowrap
 " 相对行号
-set relativenumber
-augroup relative_number
-  autocmd!
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufEnter * :syntax sync fromstart
-augroup END
+" set relativenumber
+" augroup relative_number
+"   autocmd!
+"   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"   autocmd BufEnter * :syntax sync fromstart
+" augroup END
 " 行号背景
 hi LineNr ctermbg=235 
 " set autowrite

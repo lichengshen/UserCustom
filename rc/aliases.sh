@@ -10,7 +10,7 @@ else
 fi
 
 # neovim
-command -v nvim &>/dev/null && nvim -v &>/dev/null && alias vim='nvim'
+# command -v nvim &>/dev/null && nvim -v &>/dev/null && alias vim='nvim'
 
 # lazygit
 command -v lazygit &>/dev/null && alias lg='lazygit'
@@ -28,7 +28,7 @@ fi
 alias grep='grep --color=auto'
 
 # mamba
-command -v micromamba &>/dev/null && alias mmba='micromamba'
+command -v micromamba &>/dev/null && alias mmba='micromamba' && alias conda='micromamba'
 
 # kitty
 # [[ -n $KITTY_WINDOW_ID ]] && alias ssh='kitty +kitten ssh'
