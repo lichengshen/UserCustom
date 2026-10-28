@@ -1,5 +1,11 @@
 # UserCustom Shell 設定
 
+## My changes
+
+- Modified `.vimrc`.
+- Changed aliases to remove `vim` → `nvim` and add `conda` → `micromamba`.
+- Added optional setup for Codex global instructions.
+
 此專案包含一系列的 Shell 腳本，用於在 Linux 系統上安裝必要的軟體包並進行shell環境設定。以下是設定過程的步驟指南。
 
 ## 步驟 1: 安裝依賴
@@ -38,4 +44,8 @@ stew install install_scripts/Stewfile
 ./setup_scripts/setup_git.sh
 ./setup_scripts/setup_yazi.sh
 ./setup_scripts/setup_rime-frost.sh
+./setup_scripts/setup_codex.sh
 ```
+
+The optional Codex setup copies `home/.codex/AGENTS.md` to `~/.codex/AGENTS.md`
+only if the destination is missing or empty. Existing non-empty files are preserved.
